@@ -4,13 +4,13 @@
                 <div class="heading-text heading-section">
                     <h2>Browse our latest blogs</h2>
                     <span class="lead">we've included a collection of blogs with a wealth of information to help you learn more about the workshops and 
-					get to know your VIEF SCHOLAR better.</span>
+					get to know your VSCHOLAR better.</span>
                 </div>
             </div>
 
             <div id="blog">
                 <div class="container">
-                    <!-- Blog -->
+                    <!-- blog -->
                     <div id="blog" class="grid-layout post-3-columns m-b-30" data-item="post-item">
 						@foreach($blog_list as $k=>$v)
                         <!-- Post item-->

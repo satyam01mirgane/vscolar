@@ -34,7 +34,7 @@
                                             <li><a href="{{url('courses')}}">Courses</a></li>
                                             <li><a href="{{url('services')}}">Services</a></li>
                                             <li><a href="{{url('events')}}">Events</a></li>
-											<li><a href="{{url('blogs')}}">Blogs</a></li>
+											<li><a href="{{url('blogs')}}">blogs</a></li>
 											<li><a href="{{url('contact-us')}}">Contact Us</a></li>
 											
 
@@ -64,7 +64,7 @@
             </div>
             <div class="copyright-content">
                 <div class="container">
-                    <div class="copyright-text text-center">&copy; Copyright VIEF SCHOLAR 2023.<a href="#"> Privacy policy</a> : <a href="#">Terms & Conditions </a> : <a href="contact-us.php">Contact</a> </div>
+                    <div class="copyright-text text-center">&copy; Copyright VSCHOLAR 2023.<a href="#"> Privacy policy</a> : <a href="#">Terms & Conditions </a> : <a href="contact-us.php">Contact</a> </div>
                 </div>
             </div>
         </footer>

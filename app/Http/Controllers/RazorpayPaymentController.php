@@ -22,7 +22,7 @@ class RazorpayPaymentController extends Controller
     {
         $input = $request->all();
         //$api = new Api('rzp_test_vPpKZ6HJO3H88P','BRq2br6TnuxyikKjmn7DQUVn');
-        $api = new Api('rzp_live_EuNq2EgYEn62mD','Z2Y7fzKWagGz1HQsks9aUFHy');
+        $api = new Api('rzp_test_kHRlkQtGsdpYnK','euz62miqzxk759mZxWFlAJKR');
   
         $payment = $api->payment->fetch($input['razorpay_payment_id']);
 		
@@ -89,7 +89,7 @@ class RazorpayPaymentController extends Controller
 		Mail::send('front.pages.email-file', $data, function($message) {
          $message->to(Auth::user()->email, Auth::user()->name)->subject
             ('Order successfull');
-         $message->from('noreply@ VIEF SCHOLAR .in','Acad Buddy');
+         $message->from('noreply@vscholar.in','VSCHOLAR');
 		});
 	}
 	
@@ -101,7 +101,7 @@ class RazorpayPaymentController extends Controller
 		Mail::send('email.course-purchase', $data, function($message) {
          $message->to(Auth::user()->email, Auth::user()->name)->subject
             ('Enrollment Successfull');
-         $message->from('noreply@ VIEF SCHOLAR .in','Acad Buddy');
+			$message->from('noreply@vscholar.in','VSCHOLAR');
 		});
 	}
 	
@@ -110,7 +110,7 @@ class RazorpayPaymentController extends Controller
 		$orderItem = DB::table('app_order_item')->where('order_no',$order_id)->where('user_id',Auth::user()->id)->get()->toArray();
 		
 		$to = Auth::user()->email;
-		$from = 'noreply@ VIEF SCHOLAR .in';
+		$from = 'noreply@ VSCHOLAR .in';
 		$order_no = $orderItem[0]->order_no;
 		$order_total = $orderItem[0]->sub_total;
 		$subject = 'Dear '.Auth::user()->name.' Thanks For Enrollment, Your Purchase Is Successfull';
@@ -121,14 +121,14 @@ class RazorpayPaymentController extends Controller
 		$headers = "From: $from";
 		$headers = "From: " . $from . "\r\n";
 		$headers .= "Reply-To: ". $from . "\r\n";
-		$headers .= 'Bcc: accounts@ VIEF SCHOLAR .in' . "\r\n";
+		$headers .= 'Bcc: accounts@ VSCHOLAR .in' . "\r\n";
 		$headers .= "MIME-Version: 1.0\r\n";
 		$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
 		//$subject = "Order Successfull";
 
-		$logo = 'https:// VIEF SCHOLAR .in/uploads/1/2022-09/logo.svg';
-		$link = 'https:// VIEF SCHOLAR .in/';
+		$logo = 'https:// VSCHOLAR .in/uploads/1/2022-09/logo.svg';
+		$link = 'https:// VSCHOLAR .in/';
 
 		$body = "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Workshop Enrollment Success</title>";
 		$body = "</head><body>";

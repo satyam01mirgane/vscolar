@@ -59,15 +59,27 @@ img.yr-cert-img {
     left: 13%;
     font-size: 2.5vw;
 }
+
+/* Force landscape orientation for printing */
+@media print {
+    @page {
+        size: landscape;
+    }
+
+    body {
+        -webkit-print-color-adjust: exact; /* Ensures background colors are printed */
+    }
+}
 </style>
+
 <!-- Section -->
-   <div class="Cbox" id="printarea">
-        <div class="certID">Certificate ID : <span>ACDBD{{rand(1000,9999)}}</span></div>
-        <div class="name">{{ucwords(Auth::user()->name)}}</div>
-        <div class="course">{{$orders->product_name}}  @if($orders->type=='Workshop') <b>Workshop</b> @else <b>Course</b> @endif</div>        
-        <div class="date">{{date('d M Y',strtotime($orders->session_date))}}</div>
-        <img src="{{asset('assets/images/COURSE.jpg')}}" class="yr-cert-img">
-    </div>
+<div class="Cbox" id="printarea">
+    <div class="certID">Certificate ID : <span>VSCL{{rand(1000,9999)}}</span></div>
+    <div class="name">{{ucwords(Auth::user()->name)}}</div>
+    <div class="course">{{$orders->product_name}}  @if($orders->type=='Workshop') <b>Workshop</b> @else <b>Course</b> @endif</div>        
+    <div class="date">{{date('d M Y',strtotime($orders->session_date))}}</div>
+    <img src="{{asset('assets/images/COURSE.jpg')}}" class="yr-cert-img">
+</div>
 
 <!-- End Section -->
 <!-- /.content-wrapper -->
@@ -97,13 +109,14 @@ function printDiv(divName) {
      window.print();
 
      document.body.innerHTML = originalContents;
-	 window.onafterprint = function(event) {
-		window.location.href = "<?php echo url('/certificate-feedback')?>";
-	 };
-	 window.onaftercancel = function(event) {
-		window.location.href = "<?php echo url('/certificate-feedback')?>";
-	 };
-	 
+     window.onafterprint = function(event) {
+        window.location.href = "<?php echo url('/certificate-feedback')?>";
+     };
+     window.onaftercancel = function(event) {
+        window.location.href = "<?php echo url('/certificate-feedback')?>";
+     };
 }
-setTimeout(function() {window.location.href = "<?php echo url('/certificate-feedback')?>";}, 2000);
+setTimeout(function() {
+    window.location.href = "<?php echo url('/certificate-feedback')?>";
+}, 2000);
 </script>

@@ -24,38 +24,38 @@
               </p>
             </a>
           </li>       
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="<?php echo e(url('enrolled-workshop')); ?>" class="nav-link <?php echo e($menu3); ?>">
               <i class="nav-icon far fa-image"></i>
               <p>
                 Enrolled Workshops
               </p>
             </a>
-          </li>
+          </li> -->
            
-		  <li class="nav-item">
+		  <!-- <li class="nav-item">
             <a href="<?php echo e(url('scheduled-workshop')); ?>" class="nav-link <?php echo e($menu4); ?>">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Scheduled Workshops
               </p>
             </a>
-          </li>
+          </li> -->
 		  
-		  <li class="nav-item">
+		  <!-- <li class="nav-item">
             <a href="<?php echo e(url('enrolled-course')); ?>" class="nav-link <?php echo e($menu6); ?>">
               <i class="nav-icon far fa-image"></i>
               <p>
-               Enrolled Courses
+               Enrolled Workshops
               </p>
             </a>
-          </li>
+          </li> -->
 		  
 		  <li class="nav-item">
             <a href="<?php echo e(url('scheduled-course')); ?>" class="nav-link <?php echo e($menu7); ?>">
               <i class="nav-icon far fa-image"></i>
               <p>
-                Scheduled Courses
+                Scheduled Workshops
               </p>
             </a>
           </li>
@@ -68,22 +68,22 @@
               </p>
             </a>
           </li>
-		   <li class="nav-item">
+		   <!-- <li class="nav-item">
             <a href="<?php echo e(url('quiz-list')); ?>" class="nav-link <?php echo e($menu8); ?>">
               <i class="nav-icon fas fa-question"></i>
               <p>
                 Online Quiz
               </p>
             </a>
-          </li>
-		   <li class="nav-item">
+          </li> -->
+		   <!-- <li class="nav-item">
             <a href="<?php echo e(url('test-list')); ?>" class="nav-link <?php echo e($menu9); ?>">
               <i class="nav-icon fas fa-question"></i>
               <p>
                 Online Test
               </p>
             </a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a href="<?php echo e(url('change-password')); ?>" class="nav-link <?php echo e($menu2); ?>">
               <i class="nav-icon far fa-calendar-alt"></i>

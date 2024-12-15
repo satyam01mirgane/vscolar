@@ -164,7 +164,7 @@ class CourseCartController extends Controller
 		$orderItem = DB::table('app_order_item')->where('order_no',$order_id)->where('user_id',Auth::user()->id)->first();
 		
 		$to = Auth::user()->email;
-		$from = 'noreply@ VIEF SCHOLAR .in';
+		$from = 'noreply@vscholar.in';
 		$order_no = $orderItem->order_no;
 		$order_total = $orderItem->sub_total;
 		$subject = 'Dear '.Auth::user()->name.' Thanks For Enrollment, Your Purchase Is Successfull';
@@ -175,14 +175,14 @@ class CourseCartController extends Controller
 		$headers = "From: $from";
 		$headers = "From: " . $from . "\r\n";
 		$headers .= "Reply-To: ". $from . "\r\n";
-		$headers .= 'Bcc: accounts@ VIEF SCHOLAR .in' . "\r\n";
+		$headers .= 'Bcc: accounts@ VSCHOLAR .in' . "\r\n";
 		$headers .= "MIME-Version: 1.0\r\n";
 		$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
 		//$subject = "Order Successfull";
 
-		$logo = 'https:// VIEF SCHOLAR .in/uploads/1/2022-09/logo.svg';
-		$link = 'https:// VIEF SCHOLAR .in/';
+		$logo = 'https:// VSCHOLAR .in/uploads/1/2022-09/logo.svg';
+		$link = 'https:// VSCHOLAR .in/';
 
 		$body = "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Workshop Enrollment Success</title>";
 		$body = "</head><body>";

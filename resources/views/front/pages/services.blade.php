@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="page-title" style="min-height:150px;">
                     <!--<h1>Services</h1>-->
-                    <!--<span> VIEF SCHOLAR survives by its promise to make the servicing sector worth the efforts of students and big players simultaneously. </span>-->
+                    <!--<span> VSCHOLAR survives by its promise to make the servicing sector worth the efforts of students and big players simultaneously. </span>-->
                 </div>
             </div>
         </section>
@@ -23,7 +23,7 @@
 						<h2 class="text-medium">Workshops</h2>
                         <p>Our expertly taught industrial workshops provide participants with real-world experience in a variety of fields as well as academic understanding. These courses, taught by subject-matter experts, are ideal for anybody wishing to extend their horizons and develop their talents.</p>
 						<h2 class="text-medium">Collaboration</h2>
-                        <p>With the cutting-edge seminars offered by  VIEF SCHOLAR , give your students the tools they need to succeed in the real world. Our extensive offerings include weekly workshops and customized programs tailored to your school's requirements. Take advantage of the chance to collaborate with us and share the tools they need to succeed. Give your pupils the gift of a better future by contacting us at 91-9667576014 or info@ VIEF SCHOLAR .in.</p>
+                        <p>With the cutting-edge seminars offered by  VSCHOLAR , give your students the tools they need to succeed in the real world. Our extensive offerings include weekly workshops and customized programs tailored to your school's requirements. Take advantage of the chance to collaborate with us and share the tools they need to succeed. Give your pupils the gift of a better future by contacting us at 91-9667576014 or info@ VSCHOLAR .in.</p>
 						<div class="clear"></div>
                         
                     </div>
@@ -38,8 +38,8 @@
             <div class="container">
                 <div class="row">
 				<div class="col-lg-12">
-						<h2 class="text-medium">Be a mentor at  VIEF SCHOLAR </p>
-						<p>Be an VIEF SCHOLAR mentor and business professional! Help professionals get a salary and certification with little effort. Take advantage of the opportunity to advance your career and impact someone's life. Become an VIEF SCHOLAR mentor right now to motivate the next generation of professionals!</p>
+						<h2 class="text-medium">Be a mentor at  VSCHOLAR </p>
+						<p>Be an VSCHOLAR mentor and business professional! Help professionals get a salary and certification with little effort. Take advantage of the opportunity to advance your career and impact someone's life. Become an VSCHOLAR mentor right now to motivate the next generation of professionals!</p>
 						
 						<div class="clear"></div>
                         <a href="#" class="btn btn-roundeded">Contact Now</a>
@@ -49,7 +49,7 @@
 				 <div class="row">
 				<div class="col-lg-12">
 						<h2 class="text-medium">Online Coaching</h2>
-						<p>Want to take the next step in your education? Go no farther than  VIEF SCHOLAR , the industry leader in online education created for the 21st century student. Our platform is adapted to your requirements with a broad selection of courses and themes, knowledgeable teachers, and flexible scheduling. </p>
+						<p>Want to take the next step in your education? Go no farther than  VSCHOLAR , the industry leader in online education created for the 21st century student. Our platform is adapted to your requirements with a broad selection of courses and themes, knowledgeable teachers, and flexible scheduling. </p>
 						 
 						<div class="clear"></div>
                     </div>

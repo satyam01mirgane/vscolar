@@ -30,7 +30,7 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Blog Id","name"=>"blog_id","join"=>"app_blog,name"];
+			$this->col[] = ["label"=>"blog Id","name"=>"blog_id","join"=>"app_blog,name"];
 			$this->col[] = ["label"=>"Name","name"=>"name"];
 			$this->col[] = ["label"=>"Email","name"=>"email"];
 			$this->col[] = ["label"=>"Review","name"=>"review"];

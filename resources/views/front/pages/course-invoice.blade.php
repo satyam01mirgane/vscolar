@@ -149,8 +149,8 @@ hr {
                         <div class="text-center text-150" style="background: #122536;">
                             <!-- <i class="fa fa-book fa-2x text-success-m2 mr-1"></i>
                             <span class="text-default-d3">Bootdey.com</span> -->
-                            <a class="navbar-brand logo" href="https:// VIEF SCHOLAR .in">
-                                <img loading="lazy" class="logo-default" src="https:// VIEF SCHOLAR .in/uploads/1/2022-09/logo.svg" alt="logo">
+                            <a class="navbar-brand logo" href="https:// VSCHOLAR .in">
+                                <img loading="lazy" class="logo-default" src="https:// VSCHOLAR .in/uploads/1/2022-09/logo.svg" alt="logo">
                             </a>
                         </div>
                     </div>

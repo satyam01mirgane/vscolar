@@ -57,7 +57,7 @@
                         
 
                                     <p>
-                                        <b> VIEF SCHOLAR ’s biggest Web-a-thon is here!</b>
+                                        <b> VSCHOLAR ’s biggest Web-a-thon is here!</b>
 The most interesting online quiz contest to check your web development skills and help you find your edge to compete with the finest brains.
  </p>    
 
@@ -108,9 +108,9 @@ The most interesting online quiz contest to check your web development skills an
                     </div>
                     <h3 class="fw-bold event-left">Education Icons: Saluting Extraordinary Educators Awards</h3>
                      <p>
-                 Education Icons: Saluting Extraordinary Educators is  VIEF SCHOLAR ’s first prestigious event to honor and celebrate the remarkable contributions of exceptional educators. It will be held on September 5, 2023, in online mode. </p>
+                 Education Icons: Saluting Extraordinary Educators is  VSCHOLAR ’s first prestigious event to honor and celebrate the remarkable contributions of exceptional educators. It will be held on September 5, 2023, in online mode. </p>
 
-<p>At  VIEF SCHOLAR , we recognise the profound impact that educators have on shaping the lives of students. Through this event, we aim to express our gratitude and admiration for these extraordinary individuals who have dedicated themselves to the noble profession of teaching. </p>
+<p>At  VSCHOLAR , we recognise the profound impact that educators have on shaping the lives of students. Through this event, we aim to express our gratitude and admiration for these extraordinary individuals who have dedicated themselves to the noble profession of teaching. </p>
 
 <p><b>Who can apply:</b> The awards are open to all educators, including teachers, professors, instructors, and education administrators.
                      </p>    
@@ -135,7 +135,7 @@ The selection committee, comprising esteemed education professionals and experts
 
  <li><span>&#10003;</span><b>Commemorative Memento:</b> Awardees will also receive a special award memento. This physical token of appreciation will be dispatched to them after the event, serving as a lasting reminder of their remarkable accomplishments.</li>
 
- <li><span>&#10003;</span><b>Free Workshop by  VIEF SCHOLAR :</b> As a gesture of our appreciation, all awardees will be entitled to a complimentary workshop by  VIEF SCHOLAR . This workshop, valued at Rs. 1500, offers an opportunity for professional development and learning in areas relevant to their teaching practices and career growth. </li>
+ <li><span>&#10003;</span><b>Free Workshop by  VSCHOLAR :</b> As a gesture of our appreciation, all awardees will be entitled to a complimentary workshop by  VSCHOLAR . This workshop, valued at Rs. 1500, offers an opportunity for professional development and learning in areas relevant to their teaching practices and career growth. </li>
                     <h5 class="fw-bold mb-3">Fill the Nomination form Here</h5>
                     
                     <div><a href="https://forms.gle/rLRzGS3c9HCrs5Ck6" class="btn btn-dark px-5" data-bs-dismiss="">Apply</a> <span class="px-3"> 

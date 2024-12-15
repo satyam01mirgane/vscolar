@@ -41,6 +41,9 @@ Route::get('/quiz-list','HomePageController@listQuiz');
 Route::get('/start-quiz/{name}','HomePageController@startQuiz');
 Route::post('/submit-quiz','HomePageController@submitQuiz');
 
+Route::get('/career', [HomePageController::class, 'showCareerPage'])->name('career.page');
+
+
 Route::get('/test-list','HomePageController@listTest');
 Route::get('/start-test/{name}','HomePageController@startTest');
 Route::post('/submit-test','HomePageController@submitTest');
@@ -83,3 +86,4 @@ Route::get('admin-order-list', 'AdminAppOrder1Controller@getOrder')->name('admin
 Route::get('print-invoice-admin/{order}', 'AdminAppOrder1Controller@getOrderPrint');
 Route::post('/save-newsletter','HomePageController@saveNewsletter');
 Route::post('/save-popupdata','HomePageController@savePopupData');
+

@@ -116,7 +116,7 @@
             <div class="container">
             <div class="row pt-5">
                 <div class="content col-lg-6">
-                    <h3>Perks of Choosing VIEF SCHOLAR workshop</h3>
+                    <h3>Perks of Choosing VSCHOLAR workshop</h3>
                     <p>
 						<?php echo nl2br($workshop_details->perks_of_choosing);?>
                     </p>
@@ -272,7 +272,7 @@
                 <img alt="" src="{{asset('assets/images/gif/course-4.jpg')}}" class="rounded-3 w-100">                    
                 </div>
             </div>
-             <!--end: Part 2 -->
+             <!--end: Part 2 -->a
              <!-- Part 3 -->
             <div class="row">
                 <div class="content col-lg-12">

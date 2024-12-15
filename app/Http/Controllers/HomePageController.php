@@ -19,7 +19,10 @@ use Razorpay\Api\Api;
 class HomePageController extends Controller
 {
     //
-	
+	public function showCareerPage()
+    {
+        return view('front.pages.career');
+    }
 	public function index(){
 		$data=array();
 		$data['home']='active';
@@ -58,7 +61,7 @@ class HomePageController extends Controller
 	
 	
 	public function sendEnquiry(Request $request){
-		$to = "enquiry@ VIEF SCHOLAR .in";
+		$to = "enquiry@ VSCHOLAR .in";
 		$from = $request->email;
 		$name = $request->name;
 		$subject = "New Query";
@@ -73,8 +76,8 @@ class HomePageController extends Controller
 
 		$subject = "You have a message from ".$name;
 
-		$logo = 'https:// VIEF SCHOLAR .in/uploads/1/2022-09/logo.svg';
-		$link = 'https:// VIEF SCHOLAR .in/';
+		$logo = 'https:// VSCHOLAR .in/uploads/1/2022-09/logo.svg';
+		$link = 'https:// VSCHOLAR .in/';
 
 		$body = "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Express Mail</title></head><body>";
 		$body .= "<table style='width: 100%;'>";
@@ -99,6 +102,8 @@ class HomePageController extends Controller
 				return redirect()->back();
 		}
 	}
+// Example in HomeController.php
+
 
 	public function workshops(Request $request){
 		$data=array();
@@ -396,7 +401,7 @@ class HomePageController extends Controller
 		$data['contact']='';
 		$data['blog_page'] = 'main';
 		
-		$data['page_title'] = 'Blogs - '.app_setting()->site_title;
+		$data['page_title'] = 'blogs - '.app_setting()->site_title;
 		$data['category'] = DB::table('app_category')->get();
 		$name = $request->blogsearch;
 		if(isset($request->blogsearch)){
@@ -420,7 +425,7 @@ class HomePageController extends Controller
 		$data['contact']='';
 		$data['blog_page'] = 'cat';
 		
-		$data['page_title'] = 'Blogs - '.app_setting()->site_title;
+		$data['page_title'] = 'blogs - '.app_setting()->site_title;
 		$data['category_details'] = DB::table('app_category')->where('slug',$name)->first();
 		$data['category'] = DB::table('app_category')->get();
 		$name = $request->blogsearch;
@@ -444,7 +449,7 @@ class HomePageController extends Controller
 		$data['events']='';
 		$data['contact']='';
 		
-		$data['page_title'] = 'Blogs - '.app_setting()->site_title;
+		$data['page_title'] = 'blogs - '.app_setting()->site_title;
 		$data['category'] = DB::table('app_category')->get();
 		$data['blog_detail'] = DB::table('app_blog')->where('slug',$name)->first();
 		$data['category_details'] = DB::table('app_category')->where('id',$data['blog_detail']->category_id)->first();
@@ -510,7 +515,7 @@ class HomePageController extends Controller
 	}
 	
 	public function savePopupData(Request $request){
-	   $to = "enquiry@ VIEF SCHOLAR .in";
+	   $to = "enquiry@ VSCHOLAR .in";
 		$from = $request->email;
 		$name = $request->name;
 		$subject = "New Query";
@@ -524,8 +529,8 @@ class HomePageController extends Controller
 
 		$subject = "You have a message from ".$name;
 
-		$logo = 'https:// VIEF SCHOLAR .in/uploads/1/2022-09/logo.svg';
-		$link = 'https:// VIEF SCHOLAR .in/';
+		$logo = 'https:// VSCHOLAR .in/uploads/1/2022-09/logo.svg';
+		$link = 'https:// VSCHOLAR .in/';
 
 		$body = "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Express Mail</title></head><body>";
 		$body .= "<table style='width: 100%;'>";

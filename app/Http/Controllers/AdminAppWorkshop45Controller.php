@@ -394,8 +394,23 @@
 	    }
 
 
+		public function loadMoreWorkshops(Request $request)
+{
+    $page = $request->input('page', 1);
+    $perPage = 6; // Number of items per page
+    $workshops = Workshop::orderBy('session_date', 'asc')
+        ->skip(($page - 1) * $perPage)
+        ->take($perPage)
+        ->get();
+
+    return response()->json([
+        'workshops' => $workshops,
+    ]);
+}
 
 	    //By the way, you can still create your own method in here... :) 
 
 
 	}
+
+	

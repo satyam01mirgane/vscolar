@@ -5,7 +5,7 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminAppBlogController extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminAppblogController extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -42,7 +42,7 @@
 			$this->form[] = ['label'=>'Image','name'=>'image','type'=>'upload','validation'=>'required','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Short Description','name'=>'short_description','type'=>'textarea','validation'=>'required','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Punch Text','name'=>'punch_text','type'=>'textarea','validation'=>'required','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Full Description','name'=>'full_description','type'=>'textarea','validation'=>'required','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Full Description','name'=>'full_description','type'=>'wysiwyg','validation'=>'required','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM

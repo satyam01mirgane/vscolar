@@ -1,6 +1,6 @@
 <?php
 
-    $to = "enquiry@ VIEF SCHOLAR .in";
+    $to = "enquiry@ VSCHOLAR .in";
     $from = $_REQUEST['email'];
     $name = $_REQUEST['name'];
     $subject = "New Query";
@@ -15,8 +15,8 @@
 
     $subject = "You have a message from ".$name;
 
-    $logo = 'https:// VIEF SCHOLAR .in/uploads/1/2022-09/logo.svg';
-    $link = 'https:// VIEF SCHOLAR .in/';
+    $logo = 'https:// VSCHOLAR .in/uploads/1/2022-09/logo.svg';
+    $link = 'https:// VSCHOLAR .in/';
 
 	$body = "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Express Mail</title></head><body>";
 	$body .= "<table style='width: 100%;'>";

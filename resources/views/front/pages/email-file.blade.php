@@ -8,7 +8,7 @@
 <body>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 700px; margin: auto;">
   <tr style="background-color: #122536; text-align: center;">
-    <td colspan="2"><img src="https:// VIEF SCHOLAR .in/uploads/1/2022-09/logo.svg" width="250"  /></td>
+    <td colspan="2"><img src="https:// VSCHOLAR .in/uploads/1/2022-09/logo.svg" width="250"  /></td>
   </tr>
   <tr>
     <td colspan="2">&nbsp;</td>
@@ -129,7 +129,7 @@
     <td style="font-family:Verdana, Geneva, sans-serif; font-weight:600; font-size:13px;" colspan="2">DECLARATION:</td>
   </tr>
   <tr>
-    <td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px;" colspan="2">This is not an invoice but only a confirmation of the receipt of the amount paid against for the service as described above.  Subject to terms and conditions mentioned at VIEF SCHOLAR LLP</td>
+    <td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px;" colspan="2">This is not an invoice but only a confirmation of the receipt of the amount paid against for the service as described above.  Subject to terms and conditions mentioned at VSCHOLAR LLP</td>
   </tr>
   <tr>
     <td colspan="2">&nbsp;</td>

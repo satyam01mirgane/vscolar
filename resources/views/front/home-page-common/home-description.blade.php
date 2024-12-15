@@ -5,7 +5,7 @@
         <div class="bg-sy-blue mb-2 item">
           <img src="{{asset('assets/images/icons/webinar.png')}}" alt="">
           <h2>Enhanced Learning </h2>
-          <p> At  VIEF SCHOLAR , we bring you workshops from different industries and fields presented by the experts in that industry.</p>
+          <p> At  VSCHOLAR , we bring you workshops from different industries and fields presented by the experts in that industry.</p>
         </div>       
       </div>
       <div class="col-lg-3 col-md-6">

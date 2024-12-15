@@ -444,7 +444,7 @@
           <table class="email-content" width="100%" cellpadding="0" cellspacing="0" role="presentation">
             <tr>
               <td class="email-masthead">
-                <a href="https:// VIEF SCHOLAR .in/" class="f-fallback email-masthead_name">
+                <a href="https:// VSCHOLAR .in/" class="f-fallback email-masthead_name">
                 <?php echo e($orders[0]->product_name); ?> -  <?php echo e($orders[0]->type); ?>
 
               </a>
@@ -504,7 +504,7 @@
                   <tr>
                     <td class="content-cell" align="center">
                       <p class="f-fallback sub align-center">
-                         VIEF SCHOLAR 
+                         VSCHOLAR 
                         <br>Sector 16, Faridabad, Haryana,
                         <br>India- 121002
                       </p>

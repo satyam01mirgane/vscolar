@@ -59,15 +59,27 @@ img.yr-cert-img {
     left: 13%;
     font-size: 2.5vw;
 }
+
+/* Force landscape orientation for printing */
+@media  print {
+    @page  {
+        size: landscape;
+    }
+
+    body {
+        -webkit-print-color-adjust: exact; /* Ensures background colors are printed */
+    }
+}
 </style>
+
 <!-- Section -->
-   <div class="Cbox" id="printarea">
-        <div class="certID">Certificate ID : <span>ACDBD<?php echo e(rand(1000,9999)); ?></span></div>
-        <div class="name"><?php echo e(ucwords(Auth::user()->name)); ?></div>
-        <div class="course"><?php echo e($orders->product_name); ?>  <?php if($orders->type=='Workshop'): ?> <b>Workshop</b> <?php else: ?> <b>Course</b> <?php endif; ?></div>        
-        <div class="date"><?php echo e(date('d M Y',strtotime($orders->session_date))); ?></div>
-        <img src="<?php echo e(asset('assets/images/COURSE.jpg')); ?>" class="yr-cert-img">
-    </div>
+<div class="Cbox" id="printarea">
+    <div class="certID">Certificate ID : <span>VSCL<?php echo e(rand(1000,9999)); ?></span></div>
+    <div class="name"><?php echo e(ucwords(Auth::user()->name)); ?></div>
+    <div class="course"><?php echo e($orders->product_name); ?>  <?php if($orders->type=='Workshop'): ?> <b>Workshop</b> <?php else: ?> <b>Course</b> <?php endif; ?></div>        
+    <div class="date"><?php echo e(date('d M Y',strtotime($orders->session_date))); ?></div>
+    <img src="<?php echo e(asset('assets/images/COURSE.jpg')); ?>" class="yr-cert-img">
+</div>
 
 <!-- End Section -->
 <!-- /.content-wrapper -->
@@ -97,14 +109,15 @@ function printDiv(divName) {
      window.print();
 
      document.body.innerHTML = originalContents;
-	 window.onafterprint = function(event) {
-		window.location.href = "<?php echo url('/certificate-feedback')?>";
-	 };
-	 window.onaftercancel = function(event) {
-		window.location.href = "<?php echo url('/certificate-feedback')?>";
-	 };
-	 
+     window.onafterprint = function(event) {
+        window.location.href = "<?php echo url('/certificate-feedback')?>";
+     };
+     window.onaftercancel = function(event) {
+        window.location.href = "<?php echo url('/certificate-feedback')?>";
+     };
 }
-setTimeout(function() {window.location.href = "<?php echo url('/certificate-feedback')?>";}, 2000);
+setTimeout(function() {
+    window.location.href = "<?php echo url('/certificate-feedback')?>";
+}, 2000);
 </script>
 <?php /**PATH D:\New folder\htdocs\RUN\resources\views/front/pages/certificate.blade.php ENDPATH**/ ?>

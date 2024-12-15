@@ -1,295 +1,168 @@
 @include('front.common.header')
 @include('front.common.navbar')
 
-<!-- Page title -->
-<section id="page-title" data-bg-parallax="{{asset('assets/images/course.png')}}">
-	<div class="container">
-		<div class="page-title" style="min-height:150px;">
-			<!--<h1>{{$course_details->name}}</h1>-->
-		</div>
-	</div>
-</section>
-<!-- end: Page title -->
-<section id="page-content">
-            <div class="container">
-                <div class="row">
-                <div class="content col-lg-12">  
-                    <div class="heading-text heading-section">
-                        <h2>{{$course_details->name}}</h2>
-                        <span class="lead"><?php echo $course_details->short_description;?></span>
-                    </div>
-                </div>
-                    <div class="content col-lg-6">                     
-						<!--Post Carousel -->				
-                        <div class=" yr-carousel">
-                            <!-- Post item-->
-                            <div class="post-item">
-                                <div class="row">
-                                    <div class="col-md-5">
-                                    <div class="post-image">
-                                        <a href="#">
-                                        <img alt="" src="{{asset($course_details->image)}}"></a>
-                                    </div>
-                                    </div>
-                                    <div class="col-md-7">
-                                    <div class="post-item-description pt-0">
-                                        <h2><a href="#">{{$course_details->name}}</a></h2>
-                                        <p>{{$course_details->name}}</p>
-                                        <ul class="list_will_get">
-                                            <ul class="list_will_get">
-												@if(isset($course_details->edureka_certificates))
-													<li><i class="fa fa-certificate"></i> {{$course_details->edureka_certificates}}</li>
-												@endif
-												@if(isset($course_details->hrs_live_classes))
-													<li><i class="fa fa-clock"></i> {{$course_details->hrs_live_classes}}</li>
-												@endif
-												@if(isset($course_details->weekend_classes))
-													<li><i class="fa fa-calendar-check-o"></i> {{$course_details->weekend_classes}}</li> 
-												@endif
-											</ul>
-                                        </ul>                                        
-                                    </div>
-                                    </div>
-                                    
-                                    <div class="d-flex justify-content-end">
-										@if(isset($course_details->slots))
-											@php
-												$slots = explode(',',$course_details->slots);
-											@endphp
-											<select class="form-control btn yr-select">
-												<option selected>Select Slot</option>
-												@foreach($slots as $k=>$v)
-												<option value="{{$v}}">{{$v}}</option>
-												@endforeach
-											</select>
-										@endif
-										@if($course_details->total_seat > 0)
-                                        <button type="button" class="btn btn-outline;">{{$course_details->total_seat}} SEAT LEFT </button>
-										@else
-										<button type="button" class="btn btn-outline;">SEAT FULL </button>	
-										@endif
-                                        
-										@if(!in_array($course_details->id,cartproduct()))
-											@if($course_details->total_seat > 0)
-										<form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
-											@csrf
-											<input type="hidden" value="{{ $course_details->id }}" name="id">
-											<input type="hidden" value="{{ $course_details->name }}-Course" name="name">
-											<input type="hidden" value="{{$course_details->price}}" name="price">
-											<input type="hidden" value="{{ $course_details->image }}"  name="image">
-											<input type="hidden" value="1" name="quantity">
-											<button type="submit" class="btn btn-outline;" style="margin-right:8px;margin-left:8px;">Enroll Now &nbsp;</button>
-										</form>
-										 @endif
-										@else
-											<a href="{{url('cart')}}"><button type="button" class="btn btn-outline;">In Cart</button></a>
-										@endif
-										
-                                        <button type="button" class="btn btn-outline; ">{{$course_details->price - $course_details->discount_value}}</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="content col-lg-6">                     
-						<!--Post Carousel -->				
-                        <div class="card">
-                        <div class="card-body">
-                            <!-- Post item-->
-                            <h3>Introduction </h3>
-                            <p><?php echo $course_details->full_description;?></p>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                 <!-- Module Start -->
-                <div class="row pt-5">
-                    <div class="content col-lg-8">
-                        <h3>Week-wise Modules</h3>
-                        <ul class="list-group list-group-numbered">
-							<?php
-							if(isset($course_details->learning_modules)){
-							$arr = explode("\r\n", trim($course_details->learning_modules));
-							for ($i = 0; $i < count($arr); $i++) {?>
-								<li class="list-group-item">{{$arr[$i]}}</li>
-                            <?php }}?>
-                        </ul>
-                    </div>
-                    <div class="content col-lg-4">
-                    <img alt="" src="{{asset('assets/images/gif/course-1.jpg')}}" class="rounded-3 w-100">
-                    </div>
-                </div>
-                 <!-- end: Module -->
+<section id="page-content" style="padding: 2rem 0; background-color: #f9f9f9;">
+    <div class="container">
+        <!-- Top Heading -->
+        <div class="row">
+            <div class="col-lg-12 text-center" style="margin-bottom: 2rem;">
+                <h2 style="font-size: 2.5rem; font-weight: bold;">Course Details</h2>
             </div>
-        </section>
-		 <!-- Section 2 Start -->
-        <section id="page-content" class="background-grey no-padding">
-            <div class="container">
-            <div class="row pt-5">
-                <div class="content col-lg-6">
-                    <h3>Perks of Choosing VIEF SCHOLAR course</h3>
-                    <p>
-                    <?php echo nl2br($course_details->perks_of_choosing);?> 
-                    </p>
-                </div>
-                <div class="content col-lg-6">
-                <img alt="" src="{{asset('assets/images/gif/course-2.png')}}" class="rounded-3 w-100">
-                </div>                
-            </div>
-            <!-- Part 2 -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <h3>Tools you will learn</h3>
-                    <p>
-                    <?php echo nl2br($course_details->tools_you_will_learn);?>
-                    </p>
-                </div>
-            </div>
-             <!--end: Part 2 -->
-             <!-- Part 3 -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <h3>Placement assistance</h3>
-                    <p>
-                   <?php echo nl2br($course_details->placement_assistance);?>
-                    </p>
-                </div>
-            </div>
-             <!--end: Part 3 -->
-             <!-- Part 4 -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <h3>Career Opportunities</h3>
-                    <p>
-                    <?php echo nl2br($course_details->career_counselling);?>
-                    </p>
-                </div>
-            </div>
-             <!--end: Part 4 -->
-             <!-- Part 5 -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <h3>What are we offering</h3>
-                    <p>
-                    <?php echo nl2br($course_details->what_we_have);?>
-                    </p>
-                </div>
-            </div>
-             <!--end: Part 5 -->
-            </div>
-        </section>
-        <!-- end:  Section 2 -->
-		<!-- Section 3 Start -->
-        <section id="page-content" class="liveProjecct">
-            <div class="container">
-            <div class="row">
-            <h3>Live Projects & Case Studies</h3>
-            <div class="content col-lg-12">
-            <p><?php echo nl2br($course_details->live_projects);?>  
-                    </p>
-            </div>
-            </div>
+        </div>
 
-            <div class="row pt-3">
-            <h3>Quiz & Win</h3>
-                <div class="content col-lg-6">
-                <img alt="" src="{{asset('assets/images/gif/course-5.jpg')}}" class="rounded-3 w-100">
-                </div> 
-                <div class="content col-lg-6">
-                    <div class="card"> 
-                    <div class="card-body">                   
-                    <p>
-                    <?php echo nl2br($course_details->quiz_win);?>    
-                    </p>
-                    </div></div>
-                </div>         
+        <!-- Course Card in Horizontal Layout -->
+        <div class="row align-items-center course-card" style="border: 1px solid #ddd; border-radius: 8px; padding: 1rem; background-color: #fff; margin-bottom: 2rem; transition: all 0.3s ease;">
+            <div class="col-md-4">
+                <img src="{{ asset($course_details->image) }}" alt="{{ $course_details->name }}" style="width: 100%; border-radius: 8px; transition: transform 0.3s ease;" class="course-image">
             </div>
-            <!-- Part 2 -->
-            <div class="row">
-                <div class="content col-lg-12">
-                    <h3>Test your learning.</h3>
-                     <ul class="list-group list-group-numbered">
-							<?php
-							if(isset($course_details->test_your_learning)){
-							$arr = explode("\r\n", trim($course_details->test_your_learning));
-							for ($i = 0; $i < count($arr); $i++) {?>
-								<li class="list-group-item">{{$arr[$i]}}</li>
-                            <?php }}?>
-                        </ul>
+            <div class="col-md-8">
+                <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #333;" class="animate-slide-in">{{ $course_details->name }}</h3>
+                <ul style="list-style: none; padding: 0; margin: 0; color: #6c757d; font-size: 0.95rem;">
+                    @if(isset($course_details->edureka_certificates))
+                    <li class="animate-slide-in" style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                        <i class="fas fa-certificate" style="color: #007bff; margin-right: 0.5rem;"></i>
+                        {{ $course_details->edureka_certificates }}
+                    </li>
+                    @endif
+                    @if(isset($course_details->hrs_live_classes))
+                    <li class="animate-slide-in" style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                        <i class="fas fa-clock" style="color: #28a745; margin-right: 0.5rem;"></i>
+                        {{ $course_details->hrs_live_classes }}
+                    </li>
+                    @endif
+                    @if(isset($course_details->weekend_classes))
+                    <li class="animate-slide-in" style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                        <i class="fas fa-calendar-check" style="color: #6f42c1; margin-right: 0.5rem;"></i>
+                        {{ $course_details->weekend_classes }}
+                    </li>
+                    @endif
+                </ul>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-top: 1rem;">
+                    @if($course_details->total_seat > 0)
+                    <button class="btn btn-outline-primary animate-scale-in" style="flex: 1; max-width: 200px;">
+                        <i class="fas fa-users" style="margin-right: 0.5rem;"></i>
+                        {{ $course_details->total_seat }} Seats Left
+                    </button>
+                    @else
+                    <button class="btn btn-outline-danger animate-scale-in" style="flex: 1; max-width: 200px;" disabled>
+                        <i class="fas fa-users-slash" style="margin-right: 0.5rem;"></i>
+                        Seat Full
+                    </button>
+                    @endif
+                    @if(!in_array($course_details->id, cartproduct()))
+                    <form action="{{ route('cart.store') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $course_details->id }}">
+                        <input type="hidden" name="name" value="{{ $course_details->name }}-Course">
+                        <input type="hidden" name="price" value="{{ $course_details->price }}">
+                        <input type="hidden" name="image" value="{{ $course_details->image }}">
+                        <input type="hidden" name="quantity" value="1">
+                        <button type="submit" class="btn btn-success animate-scale-in">
+                            <i class="fas fa-shopping-cart" style="margin-right: 0.5rem;"></i>
+                            Enroll Now
+                        </button>
+                    </form>
+                    @else
+                    <a href="{{ url('cart') }}" class="btn btn-secondary animate-scale-in">
+                        <i class="fas fa-shopping-cart" style="margin-right: 0.5rem;"></i>
+                        In Cart
+                    </a>
+                    @endif
                 </div>
             </div>
-             <!--end: Part 2 -->  
-            </div>
-        </section>
-        <!-- end:  Section 3 -->
-		@include('front.home-page-common.testimonial')
-		
-		<section id="page-content" class="background-grey no-padding">
-            <div class="container">
-             
-            <div class="row pt-5">
-            <h3>Sample Certificate</h3>                 
-                <div class="content col-lg-6">                    
-                    <p>
-                    <?php echo nl2br($course_details->sample_certificate);?>     
-                    </p>
-                </div>
-                <div class="content col-lg-6">
-                 <img alt="" src="{{asset($course_details->sample_certificate_image)}}" class="rounded-3 w-100">
-                </div>         
-            </div>
-            <!-- Part 2 -->
-            <div class="row">
-            <h3>FAQ</h3>
-                <div class="content col-lg-7">
-                <!--start Accordion  -->
-						<div class="accordion fancy radius clean">
-                             <div class="ac-item ac-active">
-                                 <h5 class="ac-title"><i class="fa fa-arrow-right"></i>{{$course_details->question1}}</h5>
-                                 <div class="ac-content ac-active">{{$course_details->answer1}}</div>
-                             </div>
-                         </div>
-						 <div class="accordion fancy radius clean">
-                             <div class="ac-item">
-                                 <h5 class="ac-title"><i class="fa fa-arrow-right"></i>{{$course_details->question2}}</h5>
-                                 <div class="ac-content ac-active">{{$course_details->answer2}}</div>
-                             </div>
-                         </div>
-						 <div class="accordion fancy radius clean">
-                             <div class="ac-item">
-                                 <h5 class="ac-title"><i class="fa fa-arrow-right"></i>{{$course_details->question3}}</h5>
-                                 <div class="ac-content ac-active">{{$course_details->answer3}}</div>
-                             </div>
-                         </div>
-						 <div class="accordion fancy radius clean">
-                             <div class="ac-item">
-                                 <h5 class="ac-title"><i class="fa fa-arrow-right"></i>{{$course_details->question4}}</h5>
-                                 <div class="ac-content ac-active">{{$course_details->answer4}}</div>
-                             </div>
-                         </div>
-						 <div class="accordion fancy radius clean">
-                             <div class="ac-item">
-                                 <h5 class="ac-title"><i class="fa fa-arrow-right"></i>{{$course_details->question5}}</h5>
-                                 <div class="ac-content ac-active">{{$course_details->answer5}}</div>
-                             </div>
-                         </div>
-                                   <!--end: Accordion  -->
-                <div class="content col-lg-5">
-                <img alt="" src="{{asset('assets/images/gif/course-4.jpg')}}" class="rounded-3 w-100">                    
+        </div>
+<style>
+    @keyframes slideIn {
+        from { transform: translateX(-20px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes scaleIn {
+        from { transform: scale(0.9); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+
+    .animate-slide-in {
+        animation: slideIn 0.5s ease-out forwards;
+    }
+
+    .animate-scale-in {
+        animation: scaleIn 0.5s ease-out forwards;
+    }
+
+    .course-card:hover {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .course-card:hover .course-image {
+        transform: scale(1.05);
+    }
+
+    .animate-slide-in:nth-child(1) { animation-delay: 0.1s; }
+    .animate-slide-in:nth-child(2) { animation-delay: 0.2s; }
+    .animate-slide-in:nth-child(3) { animation-delay: 0.3s; }
+</style>
+        <!-- Week-wise Modules with Dropdown -->
+        <div class="row" style="margin-top: 2rem;">
+            <div class="col-lg-12">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Week-wise Modules</h3>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#modulesDropdown" aria-expanded="false" aria-controls="modulesDropdown">
+                    View Modules
+                </button>
+                <div class="collapse" id="modulesDropdown" style="margin-top: 1rem;">
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        @foreach(explode("\r\n", trim($course_details->learning_modules)) as $module)
+                        <li style="padding: 0.5rem 1rem; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 0.5rem; background-color: #fff;">
+                            {{ $module }}
+                        </li>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
-             <!--end: Part 2 -->
-             <!-- Part 3 -->
-            <div class="row">
-                <div class="content col-lg-12">
-                  
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="row" style="margin-top: 2rem;">
+            <div class="col-lg-12">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">FAQ</h3>
+                <div style="border: 1px solid #ddd; border-radius: 8px; padding: 1rem; background-color: #fff;">
+                    @foreach(range(1, 5) as $index)
+                    @if(isset($course_details->{'question' . $index}))
+                    <div style="margin-bottom: 1rem;">
+                        <h4 style="font-size: 1.1rem; color: #000;"><i class="fa fa-arrow-right"></i> {{ $course_details->{'question' . $index} }}</h4>
+                        <p style="color: #6c757d;">{{ $course_details->{'answer' . $index} }}</p>
+                    </div>
+                    @endif
+                    @endforeach
                 </div>
             </div>
-             <!--end: Part 3 -->
-            
-            </div>
-        </section>
-<!--  -->
-<!--End Workshop Section-->
+        </div>
+    </div>
+</section>
+
 @include('front.common.footer')
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    h3 {
+        font-weight: bold;
+        color: #333;
+    }
+
+    p {
+        line-height: 1.6;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+        border: none;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+</style>

@@ -1,111 +1,128 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<!-- Footer -->
-				<section style="background-color:#25286e;">
-					<div id="particles-bubble" class="particles"></div>
-					<div class="container">
-						<div class="heading-text text-light text-center">
-							<h5 class="text-uppercase">Boost Your Skills with </h5>
-							<h2 class="fw-800">{{app_setting()->site_title}}</h2>
-							<a href="{{url('workshops')}}" class="btn btn-roundeded">Get Started</a>
-						</div>
-					</div>
-				</section>     
-	 <footer id="footer" class="inverted">
-            <div class="footer-content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <div class="widget">
-                               
-								<img alt="" src="{{asset('assets/images/logo.svg')}}"><br><br>
-                                <p class="mb-5">{{app_setting()->site_description}}</p>
-                                
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="widget">
-                                        <div class="widget-title">QUICK LINKS</div>
-                                        <ul class="list">
-                                            <li><a href="{{url('/')}}">Home</a></li>
-                                            <li><a href="{{url('about-us')}}">About Us</a></li>
-                                            <li><a href="{{url('workshops')}}">Workshops</a></li>
-                                            <li><a href="{{url('courses')}}">Courses</a></li>
-                                            <li><a href="{{url('services')}}">Services</a></li>
-                                            <li><a href="{{url('events')}}">Events</a></li>
-											<li><a href="{{url('blogs')}}">Blogs</a></li>
-											<li><a href="{{url('contact-us')}}">Contact Us</a></li>
-											<li><a href="{{url('page/term-condition')}}">Term & Condition</a></li>
-											<li><a href="{{url('page/privacy-policy')}}">Privacy Policy</a></li>
-											
-											
 
-
-                                        </ul>
-                                    </div>
-                                </div>
-                                                              
-                            </div>
-                        </div>
-						<div class="col-lg-4">
-                        <h4 class="m-b-20">UP COMINGS</h4>
-                        <div class="post-thumbnail-list">
-							@foreach(workshop_list() as $k=>$v)
-                            <div class="post-thumbnail-entry">
-                                <img src="{{asset($v->image)}}" alt="">
+<footer id="footer" style="background-color: #25286e; color: #ffffff; padding-top: 50px;">
+    <div class="footer-content">
+        <div class="container">
+            <div class="row">
+                <!-- Logo and Description -->
+                <div class="col-lg-5">
+                    <div class="widget" style="animation: fadeIn 0.5s ease-out;">
+                        <img alt="{{app_setting()->site_title}} Logo" src="{{asset('assets/images/logo.svg')}}" 
+                             style="max-width: 200px; margin-bottom: 20px; background-color: white; padding: 10px 30px; border-radius: 10px;">
+                        <p style="color:#fff; font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
+                            V Scolar is dedicated to empowering learners by providing top-notch educational resources and transformative workshops. Join us to enhance your skills and achieve your goals.
+                        </p>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="col-lg-3">
+                    <div class="widget" style="animation: fadeIn 0.5s ease-out 0.2s both;">
+                        <h4 style="color: #ffffff; font-size: 20px; margin-bottom: 20px; position: relative; padding-bottom: 10px;">
+                            QUICK LINKS
+                            <span style="position: absolute; bottom: 0; left: 0; width: 50px; height: 2px; background-color: #4CAF50;"></span>
+                        </h4>
+                        <ul style="list-style: none; padding: 0;">
+                            @php
+                            $quickLinks = [
+                                ['url' => '/', 'text' => 'Home'],
+                                ['url' => 'about-us', 'text' => 'About Us'],
+                                ['url' => 'workshops', 'text' => 'Workshops'],
+                                ['url' => 'blogs', 'text' => 'Study Material'],
+                                ['url' => 'contact-us', 'text' => 'Contact Us'],
+                                ['url' => 'page/term-condition', 'text' => 'Terms & Conditions'],
+                                ['url' => 'page/privacy-policy', 'text' => 'Privacy Policy'],
+                            ];
+                            @endphp
+                            @foreach($quickLinks as $link)
+                            <li style="margin-bottom: 10px;">
+                                <a href="{{url($link['url'])}}" style="color: #ffffff; text-decoration: none; transition: color 0.3s ease;">
+                                    <i class="fa fa-chevron-right" style="margin-right: 5px; font-size: 12px;"></i>
+                                    {{$link['text']}}
+                                </a>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+                <!-- Upcoming Workshops -->
+                <div class="col-lg-4">
+                    <div class="widget" style="animation: fadeIn 0.5s ease-out 0.4s both;">
+                        <h4 style="color: #ffffff; font-size: 20px; margin-bottom: 10px; position: relative; padding-bottom: 7px;">
+                            UP COMINGS
+                            <span style="position: absolute; bottom: 0; left: 0; width: 50px; height: 2px; background-color: #4CAF50;"></span>
+                        </h4>
+                        <div class="post-thumbnail-list" style="margin-top:20px;">
+                            @foreach(workshop_list() as $k => $v)
+                            <div class="post-thumbnail-entry" style="display: flex; align-items: center; margin-bottom: 15px; transition: transform 0.3s ease;">
+                                <img src="{{asset($v->image)}}" alt="{{$v->name}}" 
+                                     style="width: 70px; height: 70px; object-fit: cover; border-radius: 5px; margin-right: 15px;">
                                 <div class="post-thumbnail-content">
-                                    <a href="{{url('/workshops-detail/'.$v->slug)}}">{{$v->name}}</a>
+                                    <a href="{{url('/workshops-detail/'.$v->slug)}}" 
+                                       style="color: #ffffff; text-decoration: none; font-size: 16px; transition: color 0.3s ease;">{{$v->name}}</a>
                                 </div>
                             </div>
                             @endforeach
                         </div>
                     </div>
-                    </div>
-					
                 </div>
             </div>
-            <div class="copyright-content">
-                <div class="container">
-                    <div class="copyright-text text-center">&copy; Copyright VIEF SCHOLAR 2023. Design by <a href="http://www.softlysis.com/">Softlysis Technologies</a> </div>
-                </div>
+        </div>
+    </div>
+    <!-- Copyright Section -->
+    <div class="copyright-content" style="background-color: rgba(0, 0, 0, 0.1); padding: 20px 0; margin-top: 30px;">
+        <div class="container">
+            <div class="copyright-text text-center" style="font-size: 14px;">
+                &copy; Copyright V Scolar {{date('Y')}}. <a href="#" style="color: #4CAF50; text-decoration: none;">VSCHOLAR</a>
             </div>
-        </footer>
-		<a href="https://api.whatsapp.com/send?phone=+919667576014&text=Hello." class="floating" target="_blank">
-			<i class="fa fa-whatsapp float-button"></i></a>
+        </div>
+    </div>
+</footer>
 
-		<!-- end: Body Inner -->
-    <!-- Scroll top -->
-    <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
-    <!--Plugins-->
-    <script src="{{asset('assets/js/plugins.js')}}"></script>
-    <!--Template functions-->
-    <script src="{{asset('assets/js/functions.js')}}"></script>
-	
-	 <script src="{{asset('assets/plugins/particles/particles.js')}}" type="text/javascript"></script>
-    <!--Particles-->
-    <script src="{{asset('assets/plugins/particles/particles-dots.js')}}" type="text/javascript"></script>
-    <!--Particles stars-->
-    <script src="{{asset('assets/plugins/particles/particles-stars.js')}}" type="text/javascript"></script>
-    <!--Particles bubbles-->
-    <script src="{{asset('assets/plugins/particles/particles-bubble.js')}}" type="text/javascript"></script>
-    <!--Particles snow-->
-    <script src="{{asset('assets/plugins/particles/particles-snow.js')}}" type="text/javascript"></script>
-	<script type="text/javascript" src="{{asset('assets/plugins/gmap3/gmap3.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/plugins/gmap3/map-styles.js')}}"></script>
-	</div>
-    <!-- end: Body Inner -->
-    <!-- Scroll top -->
-    <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
-</body>
+<!-- Floating WhatsApp Button -->
+<a href="https://api.whatsapp.com/send?phone=+919667576014&text=Hello." class="floating" target="_blank" 
+   style="position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366; color: #FFF; 
+          border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; 
+          box-shadow: 2px 2px 3px #999; z-index: 100; transition: all 0.3s ease;">
+    <i class="fa fa-whatsapp"></i>
+</a>
+
+<!-- Scroll to Top Button -->
+<a id="scrollTop" style="position: fixed; right: 20px; bottom: 40px; width: 40px; height: 40px; background-color: #4CAF50; color: #fff; 
+                          border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; 
+                          opacity: 0; visibility: hidden; transition: all 0.3s ease; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+    <i class="icon-chevron-up"></i>
+</a>
+
+<script src="{{asset('assets/js/plugins.js')}}"></script>
+<script src="{{asset('assets/js/functions.js')}}"></script>
+
 <script>
 $(document).ready(function(){
-    $("iframe").on("load", function(){
-        $(this).contents().on("click", function(){
-            alert("Click detected inside iframe.");
-			window.location.href = "<?php echo url('cart') ?>";
-        });
+    // Show/hide scroll to top button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $('#scrollTop').css({opacity: 1, visibility: 'visible'});
+        } else {
+            $('#scrollTop').css({opacity: 0, visibility: 'hidden'});
+        }
     });
+
+    // Smooth scroll to top
+    $('#scrollTop').click(function() {
+        $('html, body').animate({scrollTop : 0}, 800);
+        return false;
+    });
+
+    // Hover effect for footer links
+    $('.footer-content a').hover(
+        function() { $(this).css('color', '#4CAF50'); },
+        function() { $(this).css('color', '#ffffff'); }
+    );
+
+    // Hover effect for post thumbnails
+    $('.post-thumbnail-entry').hover(
+        function() { $(this).css('transform', 'translateY(-5px)'); },
+        function() { $(this).css('transform', 'translateY(0)'); }
+    );
 });
 </script>
-</html>

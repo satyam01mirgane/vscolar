@@ -23,6 +23,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+	public function showCareerPage()
+{
+    return view('career'); // Make sure 'career.blade.php' exists in the resources/views directory.
+}
+
     public function index()
     {
 		$data = array();

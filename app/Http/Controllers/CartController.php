@@ -204,7 +204,7 @@ class CartController extends Controller
 		Mail::send('front.pages.email-file', $data, function($message) {
          $message->to(Auth::user()->email, Auth::user()->name)->subject
             ('Order successfull');
-         $message->from('noreply@ VIEF SCHOLAR .in','Acad Buddy');
+			$message->from('noreply@vscholar.in','VSCHOLAR');
 		});
 	}
 	
@@ -216,7 +216,7 @@ class CartController extends Controller
 		Mail::send('email.course-purchase', $data, function($message) {
          $message->to(Auth::user()->email, Auth::user()->name)->subject
             ('Enrollment Successfull');
-         $message->from('noreply@ VIEF SCHOLAR .in','Acad Buddy');
+			$message->from('noreply@vscholar.in','VSCHOLAR');
 		});
 	}
 }

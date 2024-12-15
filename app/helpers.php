@@ -126,8 +126,8 @@ if(!function_exists('GetCountryNameById')) {
 		return $category_val;
 	}
 }
-if(!function_exists('GetBlogCountById')) {
-	function GetBlogCountById($cat_id){
+if(!function_exists('GetblogCountById')) {
+	function GetblogCountById($cat_id){
 		$category_val = DB::table('app_blog')->where('category_id',$cat_id)->count();
 		return $category_val;
 	}

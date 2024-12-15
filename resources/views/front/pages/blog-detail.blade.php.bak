@@ -15,7 +15,7 @@
 <section class="page-title text-center" style="background-image:url({{asset('assets/images/background/banner.png')}});">
     <div class="container">
         <div class="title-text">
-            <h1>Blog</h1>
+            <h1>blog</h1>
             <ul class="title-menu clearfix">
                 <li>
                     <a href="{{url('/')}}">home &nbsp;/</a>
@@ -127,7 +127,7 @@
             </div>
             <ul class="categorise-list">
               @foreach($category as $k=>$v)
-              <li><a href="{{url('blog-list/'.$v->slug)}}" style="color:@if($category_details->slug==$v->slug)blue; @endif">{{$v->name}} <span>({{GetBlogCountById($v->id)}})</span></a></li>
+              <li><a href="{{url('blog-list/'.$v->slug)}}" style="color:@if($category_details->slug==$v->slug)blue; @endif">{{$v->name}} <span>({{GetblogCountById($v->id)}})</span></a></li>
               @endforeach
             </ul>
           </div>
